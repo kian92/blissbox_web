@@ -1,0 +1,170 @@
+@import 'materialize/materialize.scss';
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
+
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+input:not([type]),
+input[type=text]:not(.browser-default),
+input[type=password]:not(.browser-default),
+input[type=email]:not(.browser-default),
+input[type=url]:not(.browser-default),
+input[type=time]:not(.browser-default),
+input[type=date]:not(.browser-default),
+input[type=datetime]:not(.browser-default),
+input[type=datetime-local]:not(.browser-default),
+input[type=tel]:not(.browser-default),
+input[type=number]:not(.browser-default),
+input[type=search]:not(.browser-default),
+textarea.materialize-textarea {
+    margin: 0 0 10px 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#toast-container {
+    width: 100%;
+    div {
+        border-radius: 0px !important;
+        width: calc(100% - 300px) !important;
+        @media only screen and (max-width: $medium-screen) {
+            width: 100% !important;
+        }
+    }
+    .toast.toast-error {
+        background-color: #DC1C4D;
+    }
+    .toast.toast-success {
+        background-color: #05AC89;
+    }
+}
+
+[v-cloak] { display:none; }
+
+.no-info {
+    margin-bottom: 50px;
+}
+
+.btn {
+    background-color: $primary-color;
+    &:hover,
+    &:focus {
+        background-color: darken($primary-color, 10%);
+    }
+}
+
+.btn,
+.btn-large {
+    background-color: $primary-color;
+}
+
+.progress {
+    height: 5px;
+    margin: 0;
+    border-radius: 0;
+}
+
+a.dropdown-button {
+    margin: 0 !important;
+}
+
+.dropdown-content {
+    z-index: 1090;
+}
+
+.btn-floating {
+    padding-top: 0;
+    display: none;
+    i.material-icons {
+        color: #FFF;
+    }
+}
+
+.backend {
+    .container {
+        padding-bottom: 55px;
+    }
+    .overlay-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 900;
+        background-color: rgba(254, 206, 81, 0.5);
+    }
+    .side-nav {
+        .user-view {
+            a {
+                padding: 0 !important;
+            }
+            .profile-img {
+                margin: 0 auto;
+            }
+            .name {
+                margin-top: 10px;
+            }
+            .email {
+                padding-bottom: 8px;
+            }
+        }
+        li {
+            .collapsible-header {
+                &:hover,
+                &:focus {
+                    background-color: $primary-color !important;
+                }
+            }
+            a {
+                text-transform: uppercase;
+                padding-left: 72px;
+                &.active,
+                &:hover {
+                    background-color: lighten($primary-color, 5%) !important;
+                }
+            }
+        }
+    }
+    .autocomplete-content {
+        margin-top: -10px;
+        position: relative;
+        li {
+            img {
+                display: none;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $medium-screen) {
+
+    .backend {
+        #app {
+            left: 0;
+            width: 100%;
+        }
+        .btn-floating {
+            display: block;
+        }
+        .side-nav {
+            li {
+                a.btn {
+                    &:hover {
+                        background-color: darken($primary-color, 15%);
+                    }
+                }
+                a.btn-large {
+                    &:hover {
+                        background-color: darken($primary-color, 15%);
+                    }
+                }
+            }
+        }
+    }
+}
